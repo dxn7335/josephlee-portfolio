@@ -6,12 +6,18 @@ var app = angular.module('App',
 		 'home.controller', 
 		 'work.controller',
 		])
-		.config(function ( $stateProvider, $urlRouterProvider ) {
+		.config(function ( $stateProvider, $urlRouterProvider, $locationProvider ) {
 			'use strict';
 			// configure urls
 			$urlRouterProvider.when('/work', '/');
 			$urlRouterProvider.otherwise('/');
-
+			
+			// Check browser if history API is available
+			// if so, route without #
+			if( Modernizr.history ){
+				$locationProvider.html5Mode(true);
+			}
+			
 			//state
 			$stateProvider
 				.state('work', {
