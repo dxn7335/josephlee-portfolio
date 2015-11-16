@@ -1,11 +1,3 @@
-/*!
- * josephlee-portfolio
- * Joseph Lee - UX/Visual Designer
- * http://getfireshell.com
- * @author Danny Nguyen
- * @version 1.0.0
- * Copyright 2015. MIT licensed.
- */
 (function ($, window, document, undefined) {
 
   'use strict';
@@ -50,7 +42,3 @@
 
   
 })(jQuery, window, document);
-
-var workConfig = {
-
-};

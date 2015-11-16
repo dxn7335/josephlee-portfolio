@@ -108,7 +108,8 @@ module.exports = function (grunt) {
         'Gruntfile.js'
       ],
       options: {
-        jshintrc: '.jshintrc'
+        jshintrc: '.jshintrc',
+				force: true
       }
     },
 
