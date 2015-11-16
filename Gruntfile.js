@@ -45,7 +45,8 @@ module.exports = function (grunt) {
         '<%= project.src %>/scss/style.scss'
       ],
       js: [
-        '<%= project.src %>/js/*.js'
+        '<%= project.src %>/js/*.js',
+        '<%= project.src %>/js/**/*.js',
       ]
     },
 
@@ -121,7 +122,7 @@ module.exports = function (grunt) {
     concat: {
       dev: {
         files: {
-          '<%= project.assets %>/js/scripts.min.js': '<%= project.js %>'
+          '<%= project.assets %>/js/scripts.min.js': '<%= project.js %>',
         }
       },
       options: {
@@ -138,7 +139,8 @@ module.exports = function (grunt) {
      */
     uglify: {
       options: {
-        banner: '<%= tag.banner %>'
+        banner: '<%= tag.banner %>',
+				mangle: false
       },
       dist: {
         files: {

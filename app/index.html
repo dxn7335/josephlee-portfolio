@@ -14,10 +14,11 @@
 
     <script src="assets/components/modernizr.js"></script>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="assets/components/require.js"></script>
     <script src="assets/components/angular.js"></script>
     <script src="assets/components/release/angular-ui-router.js"></script>
   </head>
-  <body ng-app="Main">
+  <body ng-app="App">
 
     <header class="header" role="banner">
       <nav class="nav" role="navigation">
@@ -28,6 +29,7 @@
         </ul>
       </nav>
     </header>
+		<div ui-view='home'></div>
 		<div ui-view='work-sect'></div>
     <footer class="footer" role="contentinfo">
     </footer>

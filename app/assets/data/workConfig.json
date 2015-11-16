@@ -1,0 +1,28 @@
+{
+	"works":[
+			{
+				"name": "City Scape",
+				"id": "cityscape",
+				"type": "Data Visualization",
+				"img": ""
+			},
+			{
+				"name": "Kibbutz",
+				"id": "kibbutz",
+				"type": "Product Design",
+				"img": ""
+			},
+			{
+				"name": "Greatest Hotels Group",
+				"id": "greatest-hotels-group",
+				"type": "Rebrand",
+				"img": ""
+			},
+			{
+				"name": "The Clymb",
+				"id": "the-clymb",
+				"type": "Mobile Study",
+				"img": ""
+			}
+		]
+}
