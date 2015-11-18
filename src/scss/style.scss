@@ -4,6 +4,7 @@
 
 @import 'mixins/_position.scss';
 @import 'mixins/_selection.scss';
+@import 'mixins/_transition.scss';
 
 //----------------------------------*\
 // CONFIG MODULES
@@ -29,15 +30,16 @@
 //----------------------------------*/
 
 @import 'modules/_buttons.scss';
-@import 'modules/_inputs.scss';
 @import 'modules/_lists.scss';
 @import 'modules/_typography.scss';
 @import 'modules/_misc.scss';
 @import 'modules/_app.scss';
+@import 'modules/_home.scss';
+@import 'modules/_about.scss';
+@import 'modules/_work.scss';
 
 // Enhancement modules
 @import 'modules/_breakpoints.scss';
-@import 'modules/_print.scss';
 
 //----------------------------------*\
 // VENDOR

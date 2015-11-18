@@ -1,13 +1,23 @@
-* {
-  box-sizing: border-box;
-  font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
 html {
   font-size: 62.5%;
 }
-body {
-  font: 300 13px/1.6 'Helvetica Neue', Helvetica, Arial;
-  background: #fff;
-  color: #444;
+html, body {
+	margin: 0;
+	padding: 0;
+	font-family: "Roboto", sans-serf;
+}
+body{
+	font-size: inherit;
+	overflow-x: hidden;
+}
+body.home{
+	background-image: url("../img/home/background.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.body-page{
+	height: 100%;
+	display:block;
 }

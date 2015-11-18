@@ -1,10 +1,120 @@
 .header {
+	display: block;
+	
+	/* HOME NAV -----*/
+	#home-nav{
+		padding: 40px 0 60px 0;
+		
+		.heading {
+			min-width: 360px;
+			margin: auto;
+			display: block;
+			margin-bottom: 50px;
 
+			img{
+				display: block;
+				margin: auto;
+			}
+			.icon {
+				height:auto;
+				width: 35px;
+				margin-bottom: 15px;
+			}
+			.name-logo{
+				height: auto;
+				width: 20%;
+			}
+		}
+		
+		.nav-links{
+			margin: auto;
+			text-align: center;
+			
+			a{
+				margin: 0 15px;
+			}
+		}
+		
+	}
 }
-.logo {
-  margin: -100px 0 0 -84px;
-  @include position(absolute, 50% 0 0 50%);
-  img {
 
-  }
+/* SCROLL NAV ---*/
+// shares similar styling to work main nav
+$scroll-logoH: 30px;
+#scroll-nav,
+#work-main-nav{
+	position: fixed;
+	display: block;
+	opacity: 0;
+	width: 100%;
+	background: #fff;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+	padding: 15px 0 10px;
+	top: -5%;
+	z-index: 9;
+	@include transition(0.2s);
+
+	&.show{
+		opacity: 1;
+		top: 0;
+	}
+
+	.nav-container{
+		padding: 5px 10% 0;
+
+		.logo img{
+			width: $scroll-logoH;
+			height: auto;
+		}
+
+		.nav-links{
+			float: right;
+			padding-top: 5px;
+			line-height: $scroll-logoH;
+			a{
+				vertical-align: middle;
+				margin-right: 30px;
+			}
+		}
+	}
+}
+
+// LINKS (PATTERM)
+.nav-links{
+	display: block;
+
+	a{
+		text-transform: uppercase;
+		text-decoration: none;
+		display: inline-block;
+		opacity: 0.6;
+		font-weight: 600;
+		font-size: 120%;
+		color: #333;
+		@include transition(0.2s);
+
+		&.active{
+			opacity: 1;
+		}
+
+		&:hover{
+			opacity: 1;
+		}
+	}
+}
+
+/* WORK-MAIN-NAV-----*/
+#work-main-nav{
+	top:0;
+	opacity: 1;
+	position:relative;
+	padding: 15px 10px;
+	border-bottom: none;
+	@include transition(0.3s);
+	
+	&.scroll{
+		position: fixed;
+		padding: 10px 20px 10px;
+		border-bottom: 1px solid rgba(0,0,0,0.1);
+	}
 }

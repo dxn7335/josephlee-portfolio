@@ -5,17 +5,20 @@ var app = angular.module('App',
 		['ui.router', 
 		 'home.controller', 
 		 'work.controller',
+		 'header.controller',
+		 'about.controller',
+		 'workHeader.controller',
+		 'worknav.controller'
 		])
 		.config(function ( $stateProvider, $urlRouterProvider, $locationProvider ) {
 			'use strict';
 			// configure urls
-			$urlRouterProvider.when('/work', '/');
+			$urlRouterProvider.when('/work', '/about', '/');
 			$urlRouterProvider.otherwise('/');
 			
-			// Check browser if history API is available
-			// if so, route without #
 			if( Modernizr.history ){
-				$locationProvider.html5Mode(true);
+				// use the HTML5 History API
+        $locationProvider.html5Mode(true);
 			}
 			
 			//state
@@ -23,6 +26,10 @@ var app = angular.module('App',
 				.state('work', {
 					url: '/work/:id',
 					views:{
+							'header':{
+								templateUrl: 'assets/templates/global/work-header.html',
+								controller: 'workHeaderController',
+							},
 							'work-sect':{
 									'templateUrl': function($stateParams){
 										console.log($stateParams.id);
@@ -30,15 +37,45 @@ var app = angular.module('App',
 									},
 									'controller': 'workController', // map js to html scope
 							},
+							'work-nav':{
+								templateUrl: 'assets/templates/global/work-navigation.html',
+								controller: 'workNavController',
+							},
+						'footer':{
+								templateUrl: 'assets/templates/global/footer.html',
+							}
 					}
 				})
 				.state('home',{
 					url: "/",
 					views:{
+							'header':{
+								templateUrl: 'assets/templates/global/header.html',
+								controller: 'headerController', // map js to html scope
+							},
 							'home':{
-									templateUrl: 'assets/templates/home.html',
-									controller: 'homeController', // map js to html scope
+								templateUrl: 'assets/templates/home.html',
+								controller: 'homeController', // map js to html scope
+							},
+						  'footer':{
+								templateUrl: 'assets/templates/global/footer.html',
 							}
 					}
-				});
+				})
+				.state('about',{
+						url: "/about",
+						views:{
+								'header':{
+									templateUrl: 'assets/templates/global/header.html',
+									controller: 'headerController', // map js to html scope
+								},
+								'home':{
+									templateUrl: 'assets/templates/about.html',
+									controller: 'aboutController', // map js to html scope
+								},
+							  'footer':{
+								  templateUrl: 'assets/templates/global/footer.html',
+							  }
+						}
+					});
 		});

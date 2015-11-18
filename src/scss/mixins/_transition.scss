@@ -1,0 +1,59 @@
+/* Properties */
+@mixin transition($time){
+	transition: all $time ease;
+	-moz-transition: all $time ease;
+	-webkit-transition: all $time ease-in-out;
+}
+
+@mixin slideUp($time){
+	-webkit-animation: slideup $time;
+	-moz-animation: slideup $time;
+	-ms-animation: slideup $time;
+	-o-animation: slideup $time;
+}
+
+
+
+/* KEYFRAME ANIMATIONS ****************************/
+
+// SLIDE UP *******************////
+@-webkit-keyframes slideup{
+	from {
+		opacity: 0;
+		margin-top: 50%;
+	}
+	to {
+		opacity: 1;
+		margin-top: 0;
+	}
+}
+@-ms-keyframes slideup{
+	from{
+		opacity: 0;
+		margin-top: 50%;
+	}
+	to{  
+		opacity: 1;
+		margin-top: 0;
+	}
+}
+@keyframes slideup{
+	from{
+		opacity: 0;
+		margin-top: 50%;
+	}
+	to{ 
+		opacity: 1;
+		margin-top: 0;
+	}
+}
+@-moz-keyframes slideup{
+	from{
+		opacity: 0;
+		margin-top: 50%;
+	}
+	to{ 
+		opacity: 1;
+		margin-top: 0;
+	}
+}
