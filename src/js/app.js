@@ -16,11 +16,6 @@ var app = angular.module('App',
 			$urlRouterProvider.when('/work', '/about', '/');
 			$urlRouterProvider.otherwise('/');
 			
-			if( Modernizr.history ){
-				// use the HTML5 History API
-        $locationProvider.html5Mode(true);
-			}
-			
 			//state
 			$stateProvider
 				.state('work', {
@@ -46,6 +41,22 @@ var app = angular.module('App',
 							}
 					}
 				})
+				.state('about',{
+						url: "/about/",
+						views:{
+								'header':{
+									templateUrl: 'assets/templates/global/header.html',
+									controller: 'headerController', // map js to html scope
+								},
+								'about':{
+									templateUrl: 'assets/templates/about.html',
+									controller: 'aboutController', // map js to html scope
+								},
+							  'footer':{
+								  templateUrl: 'assets/templates/global/footer.html',
+							  }
+						}
+					})
 				.state('home',{
 					url: "/",
 					views:{
@@ -61,21 +72,5 @@ var app = angular.module('App',
 								templateUrl: 'assets/templates/global/footer.html',
 							}
 					}
-				})
-				.state('about',{
-						url: "/about",
-						views:{
-								'header':{
-									templateUrl: 'assets/templates/global/header.html',
-									controller: 'headerController', // map js to html scope
-								},
-								'home':{
-									templateUrl: 'assets/templates/about.html',
-									controller: 'aboutController', // map js to html scope
-								},
-							  'footer':{
-								  templateUrl: 'assets/templates/global/footer.html',
-							  }
-						}
-					});
+				});
 		});

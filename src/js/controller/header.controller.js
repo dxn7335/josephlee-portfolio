@@ -2,8 +2,8 @@
 angular.module('header.controller', [])
 
     .controller('headerController', [
-        '$scope', '$sce', '$stateParams', '$timeout',
-        function ($scope, $sce, $stateParams, $timeout){
+        '$scope', '$sce', '$stateParams', '$timeout', '$location',
+        function ($scope, $sce, $stateParams, $timeout, $location){
 					
 					$timeout( function(){
 						// Header Scroll Listener
@@ -17,9 +17,8 @@ angular.module('header.controller', [])
 						})
 						
 						$("#home-nav .nav-links a").removeClass("active");
-						console.log(window.location.pathname);
 						// mark current page on nav-links
-						if( window.location.pathname.indexOf("about") != -1){
+						if( $location.$$path.indexOf("about") != -1){
 							$("#home-nav .nav-links a[data-target='about']").addClass("active");
 						} else{
 							$("#home-nav .nav-links a[data-target='home']").addClass("active");

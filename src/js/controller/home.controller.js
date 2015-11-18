@@ -5,6 +5,7 @@ angular.module('home.controller', ['data.service'])
         '$scope', '$sce', '$stateParams', 'dataService',
         function ($scope, $sce, $stateParams, dataService){
         	$('body').addClass("home");
+					$("html, body").animate({ scrollTop: 0 }, "fast");
 					$scope.works = [];
 					
 					//Make sure works list has been loaded
