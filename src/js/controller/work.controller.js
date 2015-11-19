@@ -12,7 +12,7 @@ angular.module('work.controller', [])
 						$('.img-slider').slick({
 							dots: true,
 							infinite: true,
-							arrows: false,
+							arrows: true,
 							speed: 400,
 							slidesToShow: 1,
 							accessibility: false

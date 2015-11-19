@@ -12,6 +12,10 @@
 		cursor: pointer;
 		@include transition(0.5s);
 		
+		&:last-child{
+			margin-bottom: 30px;
+		}
+		
 		&.active{
 			width: 60%;
 			margin-top: 0;
