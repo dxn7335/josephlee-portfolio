@@ -4,25 +4,29 @@
 				"title": "City Scape",
 				"id": "cityscape",
 				"subtitle": "Data Visualization",
-				"img": "cityscape.png"
+				"img": "cityscape.png",
+				"process": "cityscape_process.pdf"
 			},
 			{
 				"title": "Kibbutz",
 				"id": "kibbutz",
 				"subtitle": "Product Design",
-				"img": "kibbutz.png"
+				"img": "kibbutz.png",
+				"process": "kibbutz_process.pdf"
 			},
 			{
 				"title": "Greatest Hotels Group",
 				"id": "greatest-hotels-group",
 				"subtitle": "Rebrand",
-				"img": "GHG.png"
+				"img": "GHG.png",
+				"process": "ghg_process.pdf"
 			},
 			{
 				"title": "The Clymb",
 				"id": "the-clymb",
 				"subtitle": "Mobile Study",
-				"img": "clymb.png"
+				"img": "clymb.png",
+				"process": "clymb_process.pdf"
 			}
 		]
 }

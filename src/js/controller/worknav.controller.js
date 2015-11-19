@@ -23,6 +23,8 @@ angular.module('worknav.controller', ['data.service'])
 								else{ $scope.prev = {invalid:"invalid"}; }
 								if( $scope.works[i+1] ){ $scope.next = {id:$scope.works[i+1].id}; }
 								else{ $scope.next = {invalid:"invalid"}; }
+								
+								$(".process-link").attr("href", "assets/img/"+$scope.works[i].id+"/"+$scope.works[i].process);
 							}
 						}
 					}, function(err){
