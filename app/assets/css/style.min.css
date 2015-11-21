@@ -752,6 +752,13 @@ body.home {
   position: relative;
 }
 
+@media only screen and (max-width: 768px) {
+  .work-page .img-slider {
+    width: 140%;
+    margin-left: -20%;
+  }
+}
+
 .work-page .img-slider.slick-slider {
   height: auto;
 }
