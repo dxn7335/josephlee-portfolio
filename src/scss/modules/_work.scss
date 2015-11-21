@@ -5,6 +5,7 @@ $max-page-width: 1500px;
 	display:block;
 	height: 100%;
 	width: 100%;
+	@include slideUp(1.2s);
 	
 	//banner
 	.banner{
@@ -12,7 +13,8 @@ $max-page-width: 1500px;
 		background-repeat:no-repeat;
     /* ie8- graceful degradation */
     background-position:50% 50%\9 !important;
-		height: 60vh;
+		background-size: cover;
+		height: 65vh;
 		min-height: 300px;
 		width: 100%;
 		display: block;
@@ -43,6 +45,9 @@ $max-page-width: 1500px;
 				text-transform: uppercase;
 				letter-spacing: 4px;
 				margin: 0 auto;
+				@media only screen and (max-width: 768px){
+					font-size: 350%;
+				}
 			}
 			.border{
 				display: block;
@@ -57,7 +62,7 @@ $max-page-width: 1500px;
 				font-weight: 300;
 				font-size: 130%;
 				letter-spacing: 2px;
-				@include slideUp(0.4s);
+				@include slideUp(1.3s);
 			}
 		}
 	}
@@ -99,6 +104,10 @@ $max-page-width: 1500px;
 			width: 50%;
 			line-height: 24px;
 			padding: 10px 0 20px;
+			
+			@media only screen and (max-width: 768px){
+				width: 100%;
+			}
 		}
 	}
 	
@@ -176,6 +185,7 @@ $max-page-width: 1500px;
 		p.left-column {
 			font-size:140%;
 		}
+		
 		p.right-column{
 			font-size:135%;
 		}

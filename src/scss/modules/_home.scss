@@ -1,4 +1,7 @@
 #home {
+	position: relative;
+	display: block;
+	@include slideUp(1s);
 	
 	.workitem {
 		position: relative;
@@ -10,6 +13,7 @@
 		margin-bottom: 20px;
 		margin-top: 20%;
 		cursor: pointer;
+		overflow: hidden;
 		@include transition(0.5s);
 		
 		&:last-child{
@@ -20,6 +24,15 @@
 			width: 60%;
 			margin-top: 0;
 			opacity: 1;
+			
+			@media only screen and (max-width: 1024px){
+				width: 80%;
+			}
+
+			@media only screen and (max-width: 768px){
+				width: 100%;
+				margin-bottom:0;
+			}
 		}
 		.info, .work-link{
 			display: block;
@@ -58,6 +71,15 @@
 		.banner {
 			width: 100%;
 			display: block;
+			
+			@media only screen and (max-width: 650px){
+				width: auto;
+				height: 100%;
+				margin-left: -30%;
+			}
+			@media only screen and (max-width: 480px){
+				margin-left: -45%;
+			}
 		}
 		
 		.work-link{

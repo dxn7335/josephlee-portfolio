@@ -39,6 +39,20 @@ angular.module('home.controller', ['data.service'])
 							}, 210*i);
 						});
 					}, 250);
+					
+					//listener
+					$(".workitem").on('click', function(e) {
+						setTimeout( function(){
+							$(".workitem").each( function(i){
+								var _this = this;
+								setTimeout( function(){
+									$(_this).removeClass('active');
+								}, 200*i);
+							});
+						}, 150);
+					});
+					
 				});
+				//end
 			};
 		});
