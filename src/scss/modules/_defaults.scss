@@ -9,12 +9,17 @@ html, body {
 body{
 	font-size: inherit;
 	overflow-x: hidden;
-}
-body.home{
-	background-image: url("../img/home/background.png");
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
+	
+	&.home{
+		background-image: url("../img/home/background.png");
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+	
+	&.mobile-open{
+		overflow:hidden;
+	}
 }
 
 .body-page{

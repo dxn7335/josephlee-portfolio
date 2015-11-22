@@ -12,6 +12,14 @@
 	-o-animation: slideup $time;
 }
 
+@mixin spin($deg){
+	transform: rotate($deg);
+	-webkit-transform: rotate($deg);
+	-moz-transform: rotate($deg);
+	-ms-transform: rotate($deg);
+	-o-transform: rotate($deg);
+}
+
 
 
 /* KEYFRAME ANIMATIONS ****************************/

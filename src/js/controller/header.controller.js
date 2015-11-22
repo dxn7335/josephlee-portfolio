@@ -24,7 +24,36 @@ angular.module('header.controller', [])
 							$("#home-nav .nav-links a[data-target='home']").addClass("active");
 						}
 					}, 0);
-    }])
+					
+					$(".mobilemenu-btn").on("click", function(e){
+						e.preventDefault();
+						var toggle = $('.mobilemenu-btn').data('toggle')||0
+						switch(toggle){
+							case 0:
+								$(".mobilemenu-btn").addClass("click");
+								$("body").addClass("mobile-open");
+								$("#mobile-nav").fadeIn(300);
+								break;
+							case 1:
+								$(".mobilemenu-btn").removeClass("click");
+								$("body").removeClass("mobile-open");
+								$("#mobile-nav").fadeOut(300);
+								break;
+						}
+						toggle ++;
+						if(toggle > 1) toggle = 0;
+						console.log(toggle);
+						$('.mobilemenu-btn').data('toggle', toggle);
+					});
+
+					//close mobile nav when a link is clicked
+					$('#mobile-nav .nav-links a, a.logo').on('click', function(){
+						$('.mobilemenu-btn').data('toggle',0);
+						$('.mobilemenu-btn').removeClass('click');
+						$("body").removeClass("mobile-open");
+						$("#mobile-nav").fadeOut(300);
+					});
+			}])
 
 		.run( function(){
 		});

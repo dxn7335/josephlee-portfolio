@@ -66,7 +66,7 @@ $scroll-logoH: 30px;
 	.nav-container{
 		padding: 5px 10% 0;
 		
-		@media only screen and (max-width: 480px){
+		@media only screen and (max-width: 640px){
 			text-align: center;
 			
 			.logo img{
@@ -89,20 +89,49 @@ $scroll-logoH: 30px;
 			}
 		}
 		
-		.mobilemenu-btn{
-			cursor:pointer;
+		.mobilebtn-cont{
+			position:relative;
 			display: none;
-			opacity: 0.35;
-			content: "\f0c9";
-			font-family: "FontAwesome";
-			font-size: 180%;
+			width: 20px;
+			height: 20px;
+			float: right;
+			margin-top: 3px;
+			
+			.mobilemenu-btn{
+				position: absolute;
+				top: 0;
+				left: 0;
+				cursor:pointer;
+				opacity: 0.35;
+				content: "\f0c9";
+				font-family: "FontAwesome";
+				font-size: 180%;
+				@include transition(0.3s);
+
+				&.click{
+					opacity: 0;
+					font-size: 70%;
+					@include spin(360deg);
+				}
+
+				&.close{
+					opacity: 0;
+					font-size: 70%;
+
+					&.click{
+						opacity: .5;
+						font-size: 180%;
+						@include spin(360deg);
+					}
+				}
+			}
 		}
 		
-		@media only screen and (max-width: 480px){
+		@media only screen and (max-width: 640px){
 			a {
 				display:none;
 			}
-			a.logo, .mobilemenu-btn{
+			a.logo, .mobilebtn-cont{
 				display: inline-block;
 			}
 		}
@@ -144,7 +173,79 @@ $scroll-logoH: 30px;
 	
 	&.scroll{
 		position: fixed;
-		padding: 10px 20px 10px;
+		padding: 10px 12px 10px;
 		border-bottom: 1px solid rgba(0,0,0,0.1);
 	}
 }
+
+
+
+
+/* MOBILE NAV --------------*/
+#mobile-nav{
+	position: fixed;
+	z-index: 2;
+	display: none;
+	background: #fff;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	
+	&.active{
+		display: block;
+	}
+	
+	.nav-links{
+		position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -40%);
+    -webkit-transform: translate(-50%, -40%);
+    -moz-transform: translate(-50%, -40%);
+    -o-transform: translate(-50%, -40%);
+		
+		a{
+			display: block;
+			font-weight: 400;
+			opacity: 1;
+    	font-size: 215%;
+    	margin-bottom: 10px;
+			@include slideUp(0.8s);
+			
+			&:hover{
+				opacity: 0.6;
+			}
+		}
+	}
+	
+	.footer{
+		position: absolute;
+    left: 50%;
+    top: 85%;
+    -ms-transform: translate(-50%, -40%);
+    transform: translate(-50%, -40%);
+    -webkit-transform: translate(-50%, -40%);
+		
+		.social-links{
+			margin-bottom: 20px;
+			
+			a{
+				margin-right: 10px;
+				width: 20px;
+				display: inline-block;
+				
+				&:last-child{
+					margin-right:0;
+				}
+				
+				img{
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+
