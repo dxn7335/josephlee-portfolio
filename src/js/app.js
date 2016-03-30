@@ -23,7 +23,7 @@ var app = angular.module('App',
 				views:{
 						'header':{
 							templateUrl: 'assets/templates/global/work-header.html',
-							controller: 'workHeaderController',
+							controller: 'headerController',
 						},
 						'work-sect':{
 								'templateUrl': function($stateParams){

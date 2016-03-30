@@ -1,4 +1,6 @@
 //Header Navigation Controller /////////////////////////////////////////////////////////////////////////////
+/* ALL WRONG */
+// Any dom manipulation or listeners should be done through directives (these actions can affect the $scope of a model)
 angular.module('workHeader.controller', [])
 
     .controller('workHeaderController', [

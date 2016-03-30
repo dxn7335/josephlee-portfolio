@@ -1,11 +1,24 @@
 <div class="header">
-	<nav id="work-main-nav">
+	<nav id="work-main-nav" main-nav>
 		<div class="nav-container">
 			<a class="logo" href="#/"><img class="icon" src="assets/img/logoicon.png"/></a>
 			<div class="nav-links">
 				<a href="#about/">about me</a>
 				<a href="assets/img/josephlee_resume.pdf" target="_blank">resume</a>
-				<span class="mobilebtn-cont">
+				<span class="mobilebtn-cont" mobile-menu-interaction>
+					<i class="mobilemenu-btn fa fa-bars"></i>
+					<i class="mobilemenu-btn close fa fa-times"></i>
+				</span>
+			</div>
+		</div>
+	</nav>
+	<nav id="scroll-nav">
+		<div class="nav-container">
+			<a class="logo" href="#/"><img class="icon" src="assets/img/logoicon.png"/></a>
+			<div class="nav-links">
+				<a href="#about/">about me</a>
+				<a href="assets/img/josephlee_resume.pdf" target="_blank">resume</a>
+				<span class="mobilebtn-cont" mobile-menu-interaction>
 					<i class="mobilemenu-btn fa fa-bars"></i>
 					<i class="mobilemenu-btn close fa fa-times"></i>
 				</span>
@@ -13,7 +26,7 @@
 		</div>
 	</nav>
 	<!-- Mobile Nav -->
-	<div id="mobile-nav">
+	<div id="mobile-nav" mobile-nav>
 		<div class="nav-links">
 			<a href="#/" data-target="home">work</a>
 			<a href="#/about/" data-target="about">about me</a>
