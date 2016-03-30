@@ -78,6 +78,10 @@ $max-page-width: 1500px;
 		&:last-child{
 			padding-bottom: $sect-padding;
 		}
+
+		@media only screen and (max-width: 768px){
+			padding: ($sect-padding - 10) 6% ($sect-padding / 2);
+		}
 	}
 	
 	// work section (general)
@@ -167,11 +171,6 @@ $max-page-width: 1500px;
 	.img-slider{
 		width: 100%;
 		position: relative;
-		
-		@media only screen and (max-width: 768px){
-			width: 140%;
-			margin-left: -20%;
-		}
 		
 		&.slick-slider{
 			height:auto;
