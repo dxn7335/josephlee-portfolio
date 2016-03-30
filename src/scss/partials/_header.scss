@@ -55,10 +55,10 @@
 
 		&.show{
 			opacity: 1;
-			-ms-transform: translate(0,49px); /* IE 9 */
-		   	-webkit-transform: translate(0,49px); /* Safari */
-		    -moz-transform: translate(0,49px);
-		    transform: translate(0,49px);
+			-ms-transform: translate3d(0,49px,0); /* IE 9 */
+		   	-webkit-transform: translate3d(0,49px,0); /* Safari */
+		    -moz-transform: translate3d(0,49px,0);
+		    transform: translate3d(0,49px,0);
 		}
 
 		&.mobile-menu-open {
@@ -147,7 +147,6 @@
 		opacity: 0;
 		border-bottom: 1px solid rgba(0,0,0,0.1);
 		top: -50px;
-	    transform: translate(0,-5%);
 		z-index: 2;
 		@include transition(0.3s);
 	}
