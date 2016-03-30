@@ -20,39 +20,39 @@ angular.module('home.controller', ['data.service'])
 		
     }])
 
-		.directive('workItemRepeat', function() {
-			return function(scope, element, attrs) {
-				if (scope.$last){
-					scope.$emit('LastElem');
-				}
-			};
-		})
-		
-		.directive('workItemContainer', function() {
-			return function(scope, element, attrs) {
-				scope.$on('LastElem', function(event){
+	.directive('workItemRepeat', function() {
+		return function(scope, element, attrs) {
+			if (scope.$last){
+				scope.$emit('LastElem');
+			}
+		};
+	})
+	
+	.directive('workItemContainer', function() {
+		return function(scope, element, attrs) {
+			scope.$on('LastElem', function(event){
+				setTimeout( function(){
+					$(".workitem").each( function(i){
+						var _this = this;
+						setTimeout( function(){
+							$(_this).addClass('active');
+						}, 210*i);
+					});
+				}, 250);
+				
+				//listener
+				$(".workitem").on('click', function(e) {
 					setTimeout( function(){
 						$(".workitem").each( function(i){
 							var _this = this;
 							setTimeout( function(){
-								$(_this).addClass('active');
-							}, 210*i);
+								$(_this).removeClass('active');
+							}, 200*i);
 						});
-					}, 250);
-					
-					//listener
-					$(".workitem").on('click', function(e) {
-						setTimeout( function(){
-							$(".workitem").each( function(i){
-								var _this = this;
-								setTimeout( function(){
-									$(_this).removeClass('active');
-								}, 200*i);
-							});
-						}, 150);
-					});
-					
+					}, 150);
 				});
-				//end
-			};
-		});
+				
+			});
+			//end
+		};
+	});

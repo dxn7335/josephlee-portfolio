@@ -2,7 +2,7 @@
 	display: block;
 	
 	/* HOME NAV -----*/
-	#home-nav{
+	#home-nav {
 		padding: 40px 0 60px 0;
 		
 		.heading {
@@ -40,212 +40,207 @@
 		}
 		
 	}
-}
 
-/* SCROLL NAV ---*/
-// shares similar styling to work main nav
-$scroll-logoH: 30px;
-#scroll-nav,
-#work-main-nav{
-	position: fixed;
-	display: block;
-	opacity: 0;
-	width: 100%;
-	background: #fff;
-	border-bottom: 1px solid rgba(0,0,0,0.1);
-	padding: 15px 0 10px;
-	top: -5%;
-	z-index: 9;
-	@include transition(0.2s);
+	/* SCROLL NAV & WORK MAIN NAV---*/
+	// shares similar styling to work main nav
+	$scroll-logoH: 30px;
 
-	&.show{
-		opacity: 1;
-		top: 0;
-	}
+	#scroll-nav,
+	#work-main-nav {
+		display: block;
+		width: 100%;
+		background: #fff;
+		border-bottom: 1px solid rgba(0,0,0,0.1);
+		padding: 15px 0 10px;
 
-	.nav-container{
-		padding: 5px 10% 0;
-		
-		@media only screen and (max-width: 640px){
-			text-align: center;
+		&.show{
+			opacity: 1;
+			-ms-transform: translate3d(0,49px,0); /* IE 9 */
+		   	-webkit-transform: translate3d(0,49px,0); /* Safari */
+		    -moz-transform: translate3d(0,49px,0);
+		    transform: translate3d(0,49px,0);
+		}
+
+		&.mobile-menu-open {
+			position: fixed;
+			border-bottom: 1px solid rgba(0,0,0,0.1);
+			z-index: 9;
+		}
+
+		.nav-container{
+			padding: 5px 10% 0;
+			
+			@media only screen and (max-width: 640px){
+				text-align: center;
+				
+				.logo img{
+					margin-left: $scroll-logoH / 2;
+				}
+			}
 			
 			.logo img{
-				margin-left: $scroll-logoH / 2;
+				width: $scroll-logoH;
+				height: auto;
 			}
-		}
-		
-		.logo img{
-			width: $scroll-logoH;
-			height: auto;
-		}
 
-		.nav-links{
-			float: right;
-			padding-top: 5px;
-			line-height: $scroll-logoH;
-			a{
-				vertical-align: middle;
-				margin-right: 30px;
-			}
-		}
-		
-		.mobilebtn-cont{
-			position:relative;
-			display: none;
-			width: 20px;
-			height: 20px;
-			float: right;
-			margin-top: 3px;
-			
-			.mobilemenu-btn{
-				position: absolute;
-				top: 0;
-				left: 0;
-				cursor:pointer;
-				opacity: 0.35;
-				content: "\f0c9";
-				font-family: "FontAwesome";
-				font-size: 180%;
-				@include transition(0.3s);
-
-				&.click{
-					opacity: 0;
-					font-size: 70%;
-					@include spin(360deg);
+			.nav-links{
+				float: right;
+				padding-top: 5px;
+				line-height: $scroll-logoH;
+				a{
+					vertical-align: middle;
+					margin-right: 30px;
 				}
-
-				&.close{
-					opacity: 0;
-					font-size: 70%;
+			}
+			
+			.mobilebtn-cont{
+				position:relative;
+				display: none;
+				width: 20px;
+				height: 20px;
+				float: right;
+				margin-top: 3px;
+				
+				.mobilemenu-btn{
+					position: absolute;
+					top: 0;
+					left: 0;
+					cursor:pointer;
+					opacity: 0.35;
+					content: "\f0c9";
+					font-family: "FontAwesome";
+					font-size: 180%;
+					@include transition(0.3s);
 
 					&.click{
-						opacity: .5;
-						font-size: 180%;
+						opacity: 0;
+						font-size: 70%;
 						@include spin(360deg);
+					}
+
+					&.close{
+						opacity: 0;
+						font-size: 70%;
+
+						&.click{
+							opacity: .5;
+							font-size: 180%;
+							@include spin(360deg);
+						}
+					}
+				}
+			}
+			
+			@media only screen and (max-width: 640px){
+				a {
+					display:none;
+				}
+				a.logo, .mobilebtn-cont{
+					display: inline-block;
+				}
+			}
+		}
+	}
+
+	#scroll-nav {
+		position: fixed;
+		opacity: 0;
+		border-bottom: 1px solid rgba(0,0,0,0.1);
+		top: -50px;
+		z-index: 2;
+		@include transition(0.3s);
+	}
+
+	// LINKS (PATTERM)
+	.nav-links{
+		display: block;
+
+		a{
+			text-transform: uppercase;
+			text-decoration: none;
+			display: inline-block;
+			opacity: 0.6;
+			font-weight: 600;
+			font-size: 120%;
+			color: #333;
+			@include transition(0.2s);
+
+			&.active{
+				opacity: 1;
+			}
+
+			&:hover{
+				opacity: 1;
+			}
+		}
+	}
+
+	/* MOBILE NAV --------------*/
+	#mobile-nav{
+		position: fixed;
+		z-index: 2;
+		display: none;
+		background: #fff;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 100%;
+		width: 100%;
+		
+		&.active{
+			display: block;
+		}
+		
+		.nav-links{
+			position: absolute;
+		    left: 50%;
+		    top: 40%;
+		    transform: translate(-50%, -40%);
+		    -webkit-transform: translate(-50%, -40%);
+		    -moz-transform: translate(-50%, -40%);
+		    -o-transform: translate(-50%, -40%);
+			
+			a{
+				display: block;
+				font-weight: 400;
+				opacity: 1;
+	    		font-size: 215%;
+	    		margin-bottom: 10px;
+				@include slideUp(0.8s);
+				
+				&:hover{
+					opacity: 0.6;
+				}
+			}
+		}
+		
+		.footer{
+			position: absolute;
+		    left: 50%;
+		    top: 85%;
+		    -ms-transform: translate(-50%, -40%);
+		    transform: translate(-50%, -40%);
+		    -webkit-transform: translate(-50%, -40%);
+			
+			.social-links{
+				margin-bottom: 20px;
+				
+				a{
+					margin-right: 10px;
+					width: 20px;
+					display: inline-block;
+					
+					&:last-child{
+						margin-right:0;
+					}
+					
+					img{
+						width: 100%;
 					}
 				}
 			}
 		}
-		
-		@media only screen and (max-width: 640px){
-			a {
-				display:none;
-			}
-			a.logo, .mobilebtn-cont{
-				display: inline-block;
-			}
-		}
 	}
+
 }
-
-// LINKS (PATTERM)
-.nav-links{
-	display: block;
-
-	a{
-		text-transform: uppercase;
-		text-decoration: none;
-		display: inline-block;
-		opacity: 0.6;
-		font-weight: 600;
-		font-size: 120%;
-		color: #333;
-		@include transition(0.2s);
-
-		&.active{
-			opacity: 1;
-		}
-
-		&:hover{
-			opacity: 1;
-		}
-	}
-}
-
-/* WORK-MAIN-NAV-----*/
-#work-main-nav{
-	top:0;
-	opacity: 1;
-	position:relative;
-	padding: 15px 10px;
-	border-bottom: none;
-	@include transition(0.3s);
-	
-	&.scroll{
-		position: fixed;
-		padding: 10px 12px 10px;
-		border-bottom: 1px solid rgba(0,0,0,0.1);
-	}
-}
-
-
-
-
-/* MOBILE NAV --------------*/
-#mobile-nav{
-	position: fixed;
-	z-index: 2;
-	display: none;
-	background: #fff;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	height: 100%;
-	width: 100%;
-	
-	&.active{
-		display: block;
-	}
-	
-	.nav-links{
-		position: absolute;
-    left: 50%;
-    top: 40%;
-    transform: translate(-50%, -40%);
-    -webkit-transform: translate(-50%, -40%);
-    -moz-transform: translate(-50%, -40%);
-    -o-transform: translate(-50%, -40%);
-		
-		a{
-			display: block;
-			font-weight: 400;
-			opacity: 1;
-    	font-size: 215%;
-    	margin-bottom: 10px;
-			@include slideUp(0.8s);
-			
-			&:hover{
-				opacity: 0.6;
-			}
-		}
-	}
-	
-	.footer{
-		position: absolute;
-    left: 50%;
-    top: 85%;
-    -ms-transform: translate(-50%, -40%);
-    transform: translate(-50%, -40%);
-    -webkit-transform: translate(-50%, -40%);
-		
-		.social-links{
-			margin-bottom: 20px;
-			
-			a{
-				margin-right: 10px;
-				width: 20px;
-				display: inline-block;
-				
-				&:last-child{
-					margin-right:0;
-				}
-				
-				img{
-					width: 100%;
-				}
-			}
-		}
-	}
-}
-

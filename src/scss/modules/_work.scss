@@ -11,8 +11,8 @@ $max-page-width: 1500px;
 	.banner{
 		background-attachment: fixed; 
 		background-repeat:no-repeat;
-    /* ie8- graceful degradation */
-    background-position:50% 50%\9 !important;
+    	/* ie8- graceful degradation */
+    	background-position:50% 50%\9 !important;
 		background-size: cover;
 		height: 65vh;
 		min-height: 300px;
@@ -71,12 +71,16 @@ $max-page-width: 1500px;
 	article{
 		padding-top: $sect-padding;
 		display: block;
-    margin: auto;
-    padding: $sect-padding 11.5% 0;
+    	margin: auto;
+    	padding: ($sect-padding - 10) 11.5% ($sect-padding / 2);
 		max-width: $max-page-width;
 		
 		&:last-child{
 			padding-bottom: $sect-padding;
+		}
+
+		@media only screen and (max-width: 768px){
+			padding: ($sect-padding - 10) 6% ($sect-padding / 2);
 		}
 	}
 	
@@ -167,11 +171,6 @@ $max-page-width: 1500px;
 	.img-slider{
 		width: 100%;
 		position: relative;
-		
-		@media only screen and (max-width: 768px){
-			width: 140%;
-			margin-left: -20%;
-		}
 		
 		&.slick-slider{
 			height:auto;
