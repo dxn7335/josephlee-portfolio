@@ -5,17 +5,17 @@ angular.module('home.controller', ['data.service'])
         '$scope', '$sce', '$stateParams', 'dataService',
         function ($scope, $sce, $stateParams, dataService){
         	$('body').addClass("home");
-					$("html, body").animate({ scrollTop: 0 }, "fast");
-					$scope.works = [];
-					
-					//Make sure works list has been loaded
-					dataService.getPromise().then(function(data){
-						//when data is loaded
-						$scope.works = data.works;
-						
-					}, function(err){
-						console.log(err);
-					});
+		$("html, body").animate({ scrollTop: 0 }, "fast");
+		$scope.works = [];
+		
+		//Make sure works list has been loaded
+		dataService.getPromise().then(function(data){
+			//when data is loaded
+			$scope.works = data.works;
+			
+		}, function(err){
+			console.log(err);
+		});
 					
 		
     }])
